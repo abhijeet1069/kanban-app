@@ -1,16 +1,54 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Box Model</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Kanban Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input id="taskInputNavbar" class="form-control mr-sm-2" type="text" placeholder="New task" aria-label="New task">
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="button" onclick="addTaskToTodo()">Add Task</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="button" onclick="addPane()">Add Pane</button>
+            </form>
+        </div>
+    </nav>
 
-<div class="box">Hello,World!!</div>
-<div class="box">Hello,World!!</div>
+    <!-- Kanban Board -->
+    <div class="container">
+        <div class="kanban-board" id="kanbanBoard">
+            <div class="kanban-column" id="todoColumn">
+                <h2>To Do</h2>
+                <div class="kanban-cards"></div>
+            </div>
+            <div class="kanban-column" id="inProgressColumn">
+                <h2>In Progress</h2>
+                <div class="kanban-cards"></div>
+            </div>
+            <div class="kanban-column" id="doneColumn">
+                <h2>Done</h2>
+                <div class="kanban-cards"></div>
+            </div>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
